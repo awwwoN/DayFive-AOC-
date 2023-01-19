@@ -11,14 +11,14 @@ class DataController extends AbstractController
     #[Route('/', name: 'SHOW_VALUE')]
     public function showValue(): Response
     {
-        $value = $this->test();
+        $value = $this->newStack();
 
         return $this->render('data.html.twig', [
             'value' => $value,
         ]);
     }
 
-    public function getStackFromFile(): array
+    public function getStack(): array
     {
         return [
             [1, '[D]', '[L]', '[J]', '[R]', '[V]', '[G]', '[F]'],
@@ -40,8 +40,7 @@ class DataController extends AbstractController
         return explode("\n", $movement);
     }
 
-    #[Route('/data')]
-    public function test()
+    public function newStack()
     {
         $movement = $this->getMovementFromFile();
 
@@ -89,7 +88,7 @@ class DataController extends AbstractController
 
     public function moveStack(array $number, array $firstStack, array $secondStack): array
     {
-        $stack = $this->getStackFromFile();
+        $stack = $this->getStack();
 
         $sum = 0;
 
