@@ -90,8 +90,6 @@ class DataController extends AbstractController
     {
         $stack = $this->getStack();
 
-        $sum = 0;
-
         foreach ($firstStack as $key => $value) {
             $firstPosition = $value - 1;
             $lastPosition = $secondStack[$key] - 1;
