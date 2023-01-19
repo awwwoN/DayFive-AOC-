@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crates{% endblock %}
+
+{% block body %}
+    <h1>This is the stack at the end : </h1>
+    <p>Look at the last crate on each stack to have the result.</p>
+    {% for data in value %}
+        {{ data|join(" ") }}
+        <br/>
+    {% endfor %}
+{% endblock %}
+
