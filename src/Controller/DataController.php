@@ -40,7 +40,7 @@ class DataController extends AbstractController
         return explode("\n", $movement);
     }
 
-    public function newStack()
+    public function newStack(): array
     {
         $movement = $this->getMovementFromFile();
 
